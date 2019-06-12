@@ -7,7 +7,10 @@ import Home from "./components/home";
 import Dashboard from "./components/admin/dashboard";
 import ProductDetails from "./components/productDetails";
 import NotFound from "./components/notFound";
-import "./App.css";
+import Users from './components/admin/users';
+import P from './components/admin/posts';
+
+
 
 class App extends Component {
   render() {
@@ -24,8 +27,17 @@ class App extends Component {
           <Route path="/not-found" component={NotFound}></Route>
           <Route path="/" exact component={Home}></Route>
           <Redirect to="/not-found"></Redirect>
+          
           </Switch>
         </div>
+        <div className="content">
+          <Switch>
+          <Route path="/admin/users" component={Users}></Route>
+          <Route path="/admin/posts" component={P}></Route>
+          
+          </Switch>
+        </div>
+        
       </div>
     );
   }
